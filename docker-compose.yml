@@ -1,0 +1,10 @@
+services:
+
+  postgres:
+    image: ankane/pgvector
+    environment:
+      POSTGRES_DB: recruiter
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"

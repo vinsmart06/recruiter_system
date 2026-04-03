@@ -1,0 +1,29 @@
+AI-Recruiter-System
+│
+├── backend
+│   ├── agents
+│   │   ├── recruiter_agents.py
+│   │   └── orchestrator.py
+│   │
+│   ├── services
+│   │   ├── resume_parser.py
+│   │   ├── embedding_service.py
+│   │   ├── ranking_service.py
+│   │   └── rag_search.py
+│   │   ----resume_parser.py 
+
+│   ├── routers
+│   │   ├── process_routes.py
+│   │   ├── interview_routes.py
+│   │   └── candidate_routes.py
+        |---analytics_routes.py 
+│   │   -----recruiter_routes.py 
+
+│   ├── database.py
+│   └── main.py
+│
+├── frontend
+│   └── app.py
+│
+├── requirements.txt
+└── docker-compose.yml
