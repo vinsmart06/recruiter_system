@@ -1,0 +1,109 @@
+Add secrets in Streamlit:
+
+BACKEND_URL = https://your-backend.onrender.com
+ENV=prod
+
+
+
+Example (Render DB):
+
+You’ll get:
+
+host=xxx.render.com
+port=5432
+user=xxx
+password=xxx
+dbname=xxx
+
+
+STEP 1: Push Code to GitHub
+Create repo:
+git init
+git add .
+git commit -m "initial commit"
+git branch -M main
+git remote add origin <your-repo-url>
+git push -u origin main
+✅ STEP 2: Deploy Backend (FastAPI)
+
+👉 Use: Render / Railway / Fly.io
+
+🔥 Recommended: Render
+Steps:
+Go to 👉 https://render.com
+Click New → Web Service
+Connect GitHub repo
+Select backend folder
+⚙️ Settings
+Build Command:
+pip install -r requirements.txt
+Start Command:
+uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+🌐 You will get:
+https://your-backend.onrender.com
+
+
+-------------------------------
+
+Step 1 — Create a GitHub account
+Go to https://github.com and sign up (free)
+
+Step 2 — Install Git on Windows
+Download from https://git-scm.com/download/win and install it
+
+git config user.name "Vineet"
+git config user.email "vinsmart06@gmail.com"
+
+Step 3 — Push your website to GitHub
+Open Command Prompt inside your website folder and run these commands one by one:
+git init
+git add .
+git commit -m "recruiter system"
+Then go to https://github.com/new and create a new repository:
+
+Name: recruiter system
+Keep it Public
+Click Create repository
+
+Then run these (replace YOUR_USERNAME with your GitHub username):
+git remote add origin https://github.com/vinsmart06/recruiter_system.git
+git branch -M main
+git push -u origin main
+
+Step 4 — Deploy on Render.com
+
+Go to https://render.com and sign up with your GitHub account
+Click New → Web Service
+Click Connect next to your ekta-travels repo
+Fill in these settings:
+
+Setting		Value
+Name		recruiter_system
+Runtime		
+Build Command	npm install && node build.js
+Start Command	uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+
+Click Create Web Service
+Wait 2–3 minutes
+
+Your website will be live at:
+https://recruiter_system.onrender.com
+
+
+Important — Every time you make changes:
+git add .
+git commit -m "updated content"
+git push
+
+
+git rm --cached .env → removes file from repo
+.gitignore → prevents future commits
+git commit --amend → rewrites history (removes secret completely)
+
+
+
+Free plan limitations on Render:
+
+Website sleeps after 15 minutes of no traffic
+First visit after sleep takes ~30 seconds to wake up
+To avoid this, upgrade to Render's $7/month paid plan
