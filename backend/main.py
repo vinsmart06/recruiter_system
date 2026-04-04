@@ -25,7 +25,19 @@ app.include_router(recruiter_router)
 app.include_router(analytics_router)
 app.include_router(process_router)
 
+@app.get("/")
+def root():
+    return {"message": "AI Recruiter system is running"}
+
 @app.on_event("startup")
 def startup():
-    create_postgres_db_if_not_exists()
-    init_db()
+    try:
+        create_postgres_db_if_not_exists()
+        init_db()
+        print("✅ Database initialized")
+    except Exception as e:
+        print("❌ DB Error:", e)
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
