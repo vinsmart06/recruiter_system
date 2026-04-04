@@ -1,3 +1,4 @@
+python-3.11.9
 fastapi
 uvicorn
 streamlit
@@ -21,3 +22,4 @@ tiktoken
 autogen-ext[openai]
 python-dotenv
 asyncio
+beautifulsoup4
